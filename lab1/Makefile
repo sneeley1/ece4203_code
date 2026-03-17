@@ -114,7 +114,7 @@ results/sta_w%p%.tcl: synth/sta.tcl.template | results/
 	    $< > $@
 
 define STA_RULE
-results/sta_w$(1)p$(2).log: \
+results/sta_w$(1)_p$(2).log: \
         results/netlist_$(1).v \
         results/constraints_w$(1)p$(2).sdc \
         results/sta_w$(1)p$(2).tcl | results/
