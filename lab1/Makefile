@@ -184,9 +184,10 @@ sim_timed: results/netlist_$(WIDTH)_timed.v
 			-D FUNCTIONAL \
 			-o results/sim_timed_$(WIDTH)_exe \
 			sim/tb_gl.v \
+			results/netlist_$(WIDTH)_timed_wrappers.v \
 			results/netlist_$(WIDTH)_timed.v \
-	    	$(SKY130_CELLS)/primitives.v \
-	    	$(SKY130_CELLS)/sky130_fd_sc_hd.v 
+	    		$(SKY130_CELLS)/primitives.v \
+	    		$(SKY130_CELLS)/sky130_fd_sc_hd.v 
 		$(VVP) results/sim_timed_$(WIDTH)_exe | tee results/sim_timed_$(WIDTH).log
 		@echo ""
 		@echo "Waveform: results/timed_$(WIDTH).vcd"
